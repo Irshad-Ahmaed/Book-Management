@@ -1,15 +1,3 @@
-"""
-Database Connection
-===================
-Sets up SQLAlchemy connection to Neon PostgreSQL.
-
-Components:
-- Engine: Connection to database
-- SessionLocal: Creates database sessions
-- Base: Base class for all models
-- get_db: Dependency for routes
-"""
-
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session

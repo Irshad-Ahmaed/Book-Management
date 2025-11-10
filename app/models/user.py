@@ -31,13 +31,3 @@ class User(Base):
     
     def __repr__(self):
         return f"<User {self.username}>"
-
-
-"""
-Column Options:
-- primary_key=True: Makes this the unique ID
-- unique=True: No two users can have same email
-- index=True: Makes searches faster
-- nullable=False: Field is required
-- default=True: Default value if not provided
-"""

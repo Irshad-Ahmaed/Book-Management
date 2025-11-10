@@ -38,6 +38,10 @@ class Book(Base):
         return f"<Book {self.title}>"
     
     @property
+    def author_name(self) -> str:
+        return self.author.name if self.author else None
+    
+    @property
     def is_available(self) -> bool:
         return self.available_copies > 0
 

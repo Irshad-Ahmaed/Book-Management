@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Enum
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from datetime import datetime, timedelta
+from datetime import datetime, timezone
 import enum
 from app.database import Base
 
@@ -54,10 +54,14 @@ class BorrowRecord(Base):
         return f"<BorrowRecord User:{self.user_id} Book:{self.book_id}>"
     
     @property
+    def book_title(self) -> str | None:
+        return self.book.title if self.book else None
+    
+    @property
     def is_overdue(self) -> bool:
         if self.return_date:  # Already returned
             return False
-        return datetime.now() > self.due_date
+        return datetime.now(timezone.utc) > self.due_date
 
 
 """
