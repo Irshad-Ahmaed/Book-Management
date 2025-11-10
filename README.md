@@ -33,8 +33,8 @@ A comprehensive FastAPI-based library management system with user authentication
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
-cd library-management-api
+git clone https://github.com/Irshad-Ahmaed/Book-Management.git
+cd Book-Management
 ```
 
 ### 2. Create Virtual Environment
